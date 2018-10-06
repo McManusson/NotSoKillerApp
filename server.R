@@ -13,16 +13,13 @@ function(input, output, session) {
     
   })
   observeEvent(input$preview, {
-    browser()
     path = input$file["datapath"]
     if(input$option == "scan") {
       output_s = ocr_data(path)
-    } else {
-      output_c = pdf_text(path)
-    }
-    if(exists(output_s)) {
       output$preview = verbatimTextOutput(output[1:10,])
-    } else if(exists(output_c)) {
+      
+    } else if(input$option == "scan") {
+      output_c = pdf_text(path)
       output$preview = verbatimTextOutput(output[1])
     } else {
       output$preview = renderUI(HTML("<strong>No preview available</strong>"))
