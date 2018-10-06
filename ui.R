@@ -12,7 +12,8 @@ ui <- fluidPage(
                            "text/comma-separated-values,text/plain",
                            ".pdf", ".jpg", ".png")),
       radioButtons("option", NULL,
-                  c("Scan", "Computer"))
+                  c("Scan", "Computer")),
+      actionButton("preview", "Preview!")
     ),
     mainPanel(uiOutput("preview"))
   )

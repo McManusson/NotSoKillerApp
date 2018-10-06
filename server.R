@@ -10,13 +10,16 @@ function(input, output, session) {
   library(dplyr)
   
   observeEvent(input$file, {
-    if(input$option == "scan") {
-      output_s = ocr_data(input$file)
-    } else {
-      output_c = pdf_text(input$file)
-    }
+    
   })
   observeEvent(input$preview, {
+    browser()
+    path = input$file["datapath"]
+    if(input$option == "scan") {
+      output_s = ocr_data(path)
+    } else {
+      output_c = pdf_text(path)
+    }
     if(exists(output_s)) {
       output$preview = verbatimTextOutput(output[1:10,])
     } else if(exists(output_c)) {
