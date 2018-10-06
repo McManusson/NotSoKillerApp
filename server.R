@@ -14,11 +14,11 @@ function(input, output, session) {
   })
   observeEvent(input$preview, {
     path = input$file["datapath"]
-    if(input$option == "scan") {
-      output_s = ocr_data(path)
-      output$preview = verbatimTextOutput(output[1:10,])
+    if(input$option == "Scan") {
+      output = ocr_data(path)
+      output$prev$iew = verbatimTextOutput(output[1:10,])
       
-    } else if(input$option == "scan") {
+    } else if(input$option == "Computer") {
       output_c = pdf_text(path)
       output$preview = verbatimTextOutput(output[1])
     } else {
