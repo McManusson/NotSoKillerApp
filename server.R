@@ -1,5 +1,6 @@
 # Server.R
-function(input, output) {
+function(input, output, session) {
+  options(shiny.maxRequestSize=30*1024^2)
   library(shinyjs)
   library(shinyFiles)
   library(shiny)
@@ -7,11 +8,12 @@ function(input, output) {
   library(tesseract)
   library(stringr)
   library(dplyr)
-  observeEvent(input$upload, {
+  
+  observeEvent(input$file, {
     if(input$option == "scan") {
-      output_s = ocr_data(file)
+      output_s = ocr_data(input$file)
     } else {
-      output_c = pdf_text(file)
+      output_c = pdf_text(input$file)
     }
   })
   observeEvent(input$preview, {

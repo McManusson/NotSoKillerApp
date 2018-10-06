@@ -3,11 +3,17 @@ ui <- fluidPage(
   tags$head(
     tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
   ),
-  tags$header("A R app"),
+  tags$header("Upload app"),
   sidebarLayout(
     sidebarPanel(
-      sliderInput("obs", "Number of observations:", min = 10, max = 500, value = 100)
+      fileInput("file", "Choose file",
+                multiple = FALSE,
+                accept = c("text/pdf",
+                           "text/comma-separated-values,text/plain",
+                           ".pdf", ".jpg", ".png")),
+      radioButtons("option", NULL,
+                  c("Scan", "Computer"))
     ),
-    mainPanel(plotOutput("distPlot"))
+    mainPanel(uiOutput("preview"))
   )
 )
