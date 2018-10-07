@@ -1,8 +1,8 @@
-header {
-background-color: #ddd;
-color: #444;
-font-size: 3em;
-text-align: center;
-border-radius: 5px;
-margin-bottom: .4em;
+.nav-tabs {
+    border-bottom: none;
+    display: none;
+}
+.tab-content {
+   padding: 15px;
+   border: 0px solid white;
 }
