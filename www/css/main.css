@@ -3075,7 +3075,8 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 #carousel-area .carousel-indicators {
-  bottom: 5px;
+    bottom: 5px;
+    display: none;
 }
 
 #carousel-area .carousel-indicators li {
