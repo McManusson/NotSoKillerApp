@@ -22,6 +22,48 @@ ui <- fluidPage(
                    h4('Web Application'),h2('Welcome', style = 'color: black;'),
                    actionButton('welcome','Start', style = 'margin-bottom: 5%;color:white; background:#FE0000; border:#FE0000', width = 120,  align = 'center' )
                    ),
+               tags$div(class = "Howitworks", checked = NA,
+                        fluidRow(
+                          h1(class="tituloHow","How it works:"),
+                          column(3,
+                                 tags$span(class = "fa-stack",
+                                           icon("upload",
+                                                "fa-stack-2x", 
+                                                lib = "font-awesome")
+                                 ),
+                                 p("Upload your academic transcripts to our platform",class="classtitleHow")
+                          ),
+                          column(3,
+                                 tags$span(class = "fa-stack",
+                                           icon("refresh ",
+                                                "fa-stack-2x", 
+                                                lib = "font-awesome")
+                                 ),
+                                 p("Our algorithm will transform your grades to certain skills",class="classtitleHow")
+                          ),
+                          column(3,
+                                 tags$span(class = "fa-stack",
+                                           icon("male",
+                                                "fa-stack-2x", 
+                                                lib = "font-awesome")
+                                 ),
+
+                                p("Professionals or Human Resources who worked with you will evaluate your skills",class="classtitleHow")
+                          ),
+                          column(3,
+                                 tags$span(class = "fa-stack",
+                                           icon("trophy",
+                                                "fa-stack-2x", 
+                                                lib = "font-awesome")
+                                 ),
+                                 p("Hunters objective’s  software will match your skills with job descriptions",class="classtitleHow")
+                          )
+                          
+                          
+                        )
+               ) ,   
+               h1(class="tituloHow2","Be visible through your skills to the people who recruits person like you"),
+               
                fluidRow(
                  column(3,
                         img(class="Imagen_peq", src = "./img/1.jpg"),
@@ -46,7 +88,8 @@ ui <- fluidPage(
                  
                  
                )
-               ),
+      )
+               ,
 
               #  ),
       tabPanel("second_page", verbatimTextOutput("summary"),
@@ -73,8 +116,7 @@ ui <- fluidPage(
                
                
                )
-    )
-
-
+    
 )
-
+)
+    
