@@ -12,6 +12,12 @@ function(input, output, session) {
   observeEvent(input$file, {
     
   })
+  
+  observeEvent(input$welcome, {
+    updateTabsetPanel(session, "inTabset",
+                      selected = "second_page")
+    print("miscojones")
+  })
   observeEvent(input$preview, {
     path = input$file["datapath"]
     if(input$option == "Scan") {

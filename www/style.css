@@ -6,3 +6,29 @@
    padding: 15px;
    border: 0px solid white;
 }
+.Imagen_fondo{
+    position: static;
+    margin-top: -34%;
+  
+  
+}
+.Title{
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-top: 26%;
+    font-size: 6vw;
+    color: black;
+    background-color: white;
+}
+.Title2{
+    font-size: 3vw;
+    color: black;
+    background-color: white;
+    display: block;
+    position: relative;
+    margin-top: -2%;
+}
+.h2, h2 {
+    font-size: 1.7vw;
+}
